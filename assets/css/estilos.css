@@ -1,0 +1,1127 @@
+/* ===================== VARIABLES ===================== */
+:root {
+    --color-principal: #CCFD32;
+    --color-principal-hover: #e6ff70;
+    --color-fondo: #000;
+    --color-seccion: #1f1f1f;
+    --color-error: #ff3c3c;
+    --gris-borde: #414141;
+}
+
+/* ===================== RESET BÁSICO ===================== */
+*, *::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 120;
+    letter-spacing: 2px;
+    background: var(--color-fondo);
+    color: var(--color-principal);
+    overflow-x: hidden;
+    background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 3px 3px;
+}
+
+/* ===================== SEPARADORES ===================== */
+section {
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.nav-container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===================== LOGO ===================== */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color-principal);
+}
+
+.logo-img {
+    height: 45px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ===================== NAVEGACIÓN ===================== */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--color-principal);
+    position: relative;
+}
+
+/* ===================== LÍNEA ANIMADA ===================== */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: var(--color-principal-hover);
+    transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===================== HERO ===================== */
+#hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-slider .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
+}
+
+.hero-slider .active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.75));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* ===================== TEXTO SUPERIOR ===================== */
+.hero-top-title {
+    font-size: 12px;
+    color: #ccff00;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 250;
+}
+
+.hero-overlay h1 {
+    font-size: 100px;
+    line-height: 0.85;
+    color: #ccff00;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 12px;
+    color: #ccff00;
+    margin-top: 25px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+}
+
+/* ===================== DISEÑO RESPONSIVO ===================== */
+@media (max-width: 992px) {
+    .hero-overlay h1 {
+        font-size: 85px;
+    }
+    .hero-subtitle {
+        font-size: 22px;
+        letter-spacing: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-top-title {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+    .hero-overlay h1 {
+        font-size: 55px;
+        line-height: 0.9;
+    }
+    .hero-subtitle {
+        font-size: 16px;
+        letter-spacing: 4px;
+        margin-top: 15px;
+    }
+}
+
+/* ===================== SECCIONES SPLIT ===================== */
+.section-split {
+    padding: 120px 0;
+}
+
+.split-container {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.split-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(204,253,50,0.15);
+    transition: transform 0.6s ease;
+    will-change: transform;
+}
+
+.split-image img:hover {
+    transform: scale(1.04);
+}
+
+.split-text {
+    flex: 1;
+    max-width: 520px;
+}
+
+.split-top-title {
+    font-size: 12px;
+    font-weight: 200;
+    color: var(--color-principal);
+    letter-spacing: 5px; 
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.split-text h2 {
+    font-size: 42px;
+    color: var(--color-principal);
+    line-height: 0.9;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.split-text .title-line {
+    border: none;
+    border-top: 1px solid #a2b041;
+    width: 75px;                       
+    margin: 25px 0 35px 0;             
+}
+
+.split-text p {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.7;
+    font-size: 19px;
+    color: var(--color-principal);
+    margin-bottom: 20px;
+}
+
+.split-text p strong {
+    font-weight: 700;
+    color: var(--color-principal);
+}
+
+@media (max-width: 992px) {
+    .split-text h2 {
+        font-size: 60px;
+    }
+    .split-top-title {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+    .split-text h2 {
+        font-size: 45px;
+    }
+    .split-top-title {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+    .split-text .title-line {
+        margin: 18px 0 22px 0;
+        width: 55px;
+    }
+    .split-text p {
+        font-size: 17px;
+    }
+}
+
+/* ===================== ACTIVIDADES ===================== */
+#actividades {
+    padding: 120px 0;
+    text-align: center;
+    background-color: var(--color-seccion);
+}
+
+.container-center {
+    width: 75%;
+    margin: 0 auto;
+}
+
+/* ===================== NUEVOS ESTILOS DE LA CABECERA ===================== */
+.seccion-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.subtitulo-disciplinas {
+    color: var(--color-principal);
+    font-size: 10px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.titulo-actividades {
+    color: var(--color-principal);
+    font-size: 3.75rem; 
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.separador-titulo {
+    border: none;
+    border-top: 1px solid #ccff00;
+    width: 100px;
+    margin-top: 30px;
+}
+
+/* ===================== CONFIGURACIÓN DE LAYOUT ===================== */
+.actividades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* ===================== TARJETAS DE ACTIVIDAD ===================== */
+.actividad-card {
+    background: black;
+    border: 1px solid #ccff00;
+    border-radius: 14px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.actividad-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-principal);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(230, 255, 112, 0.1);
+}
+
+.actividad-card h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    color: var(--color-principal);
+}
+
+.actividad-card p {
+    color: var(--color-principal);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* ===================== SECCIÓN HORARIOS ===================== */
+.horarios-container h4 {
+    font-size: 0.85rem;
+    color: var(--color-principal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+}
+
+.horarios-grid time {
+    display: block;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #ccff00;
+    border-radius: 6px;
+    color: var(--color-principal);
+    transition: all 0.25s ease;
+}
+
+.horarios-grid time:hover {
+    border-color: var(--color-principal);
+    background: rgba(230, 255, 112, 0.1);
+    color: var(--color-principal);
+    cursor: default;
+}
+
+/* ===================== FOOTER DE LA TARJETA (PRECIOS) ===================== */
+.card-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ccff00;
+}
+
+.precio {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-principal);
+}
+
+.precio small {
+    font-size: 0.9rem;
+    color: var(--color-principal);
+}
+
+/* ===================== PACK OFERTA ===================== */
+.pack-oferta {
+    position: relative;
+    margin-top: 50px;
+    padding: 25px 30px;
+    background: black;
+    border: 1px dashed var(--color-principal);
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .pack-oferta {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.pack-oferta p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.pack-oferta .badge {
+    background: var(--color-principal);
+    color: #000000;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.precio-pack {
+    color: var(--color-principal);
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+/* ===================== SECCIÓN CONTACTO ===================== */
+#contacto {
+    padding: 120px 0;
+    text-align: center;
+    background-color: #0a0a0a;
+    font-family: 'Arial Narrow', sans-serif;
+}
+
+.contacto-subtitle {
+    color: var(--color-principal);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 6px; 
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.contacto-title {
+    color: var(--color-principal);
+    font-size: 4rem;
+    font-weight: 805;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 0.9;    
+}
+
+.contacto-divider {
+    color: var(--color-principal);
+    border: none;
+    border-top: 1px solid var(--color-principal); 
+    width: 160px; 
+    margin: 20px auto;
+    opacity: 1;
+}
+
+.contacto-phones {
+    color: var(--color-principal);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/* ===================== FORMULARIO ===================== */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 420px;
+    margin: 0 auto;
+}
+
+.formulario input,
+.formulario select {
+    padding: 14px;
+    background: black;
+    border: 1px solid var(--color-principal);
+    border-radius: 10px;
+    color: var(--color-principal);
+    font-size: 15px;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    border-color: var(--color-principal-hover);
+    outline: none;
+    box-shadow: 0 0 12px rgba(230,255,112,0.2);
+}
+
+.formulario button {
+    padding: 14px;
+    background: var(--color-principal);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+.formulario button:hover {
+    background: var(--color-principal-hover);
+    box-shadow: 0 0 18px rgba(230,255,112,0.4);
+}
+
+/* ===================== MENSAJES ===================== */
+.mensaje {
+    padding: 16px 20px;
+    margin: 25px auto;
+    width: 420px;
+    border-radius: 8px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.mensaje.exito {
+    background: rgba(204, 253, 50, 0.08);
+    border: 1px solid var(--color-principal);
+    color: var(--color-principal);
+}
+
+.mensaje.error {
+    background: rgba(255, 0, 0, 0.08);
+    border: 1px solid var(--color-error);
+    color: var(--color-error);
+}
+
+/* ===================== FOOTER ===================== */
+.footer-modern {
+    width: 100%;
+    background: var(--color-principal);
+    color: black;
+    padding: 18px 0 8px;
+    font-size: 13px;
+    box-shadow: inset 0 20px 40px rgba(0,0,0,0.15);
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.footer-top {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 40px 0 120px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+/* ===================== COLUMNAS ===================== */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* ===================== LOGO FOOTER ===================== */
+.footer-logo {
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* ===================== TEXTOS IZQUIERDA ===================== */
+.footer-left h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.footer-subtitle {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.footer-location {
+    margin-top: 6px;
+    font-size: 10px;
+    font-style: italic;
+    opacity: 0.75;
+}
+
+/* ===================== TÍTULOS ===================== */
+.footer-center h4,
+.footer-right h4 {
+    margin-bottom: 14px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* ===================== TELÉFONOS ===================== */
+.footer-phone {
+    margin: 8px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===================== INSTAGRAM ===================== */
+.instagram-link {
+    text-decoration: none;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    font-size: 14px;
+}
+
+.instagram-link:hover {
+    color: #555;
+}
+
+.footer-icon {
+    width: 16px;
+    height: 16px;
+    color: black;
+    display: inline-block;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+.instagram-link:hover .footer-icon {
+    color: inherit;
+}
+
+/* ===================== SEPARADOR ===================== */
+.footer-divider {
+    width: 100%;
+    max-width: none;
+    margin: 20px 0 12px;
+    height: 1px;
+    background: rgba(0,0,0,0.12);
+}
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    opacity: 0.75;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.footer-center {
+    padding-left: 90px;
+}
+
+.footer-right {
+    padding-left: 80px;
+}
+
+.footer-copy {
+    opacity: 0.85;
+    text-align: center;
+    width: 100%;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 35px;
+        padding: 0 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 25px;
+    }
+
+    .footer-divider {
+        width: calc(100% - 50px);
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-phone {
+        justify-content: center;
+    }
+    .instagram-link {
+        justify-content: center;
+    }
+    .footer-center {
+        padding-left: 0;
+    }
+    .footer-right {
+        padding-left: 0;
+    }
+}
+
+/* ===================== ANIMACIONES ===================== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(204,253,50,0.2);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(204,253,50,0.6);
+    }
+}
+
+/* ===================== ADMIN ===================== */
+.admin-access {
+    margin-top: 20px;
+}
+
+.admin-access a {
+    text-decoration: none;
+    font-size: 18px;
+    opacity: 0.4;
+    transition: 0.3s ease;
+}
+
+.admin-access a:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/* ===================== AJUSTES GENERALES DE ESPACIADO ===================== */
+section {
+    padding: 60px 20px;
+}
+
+section:not(#hero) {
+    padding: 60px 20px;
+}
+
+.container-center,
+.split-container,
+.nav-container,
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===================== TIPOGRAFÍA MÁS CONSISTENTE */
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* ===================== BOTONES MÁS NATURALES ===================== */
+button {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+a:not(.btn-suplementacion) {
+    transition: opacity 0.2s ease;
+}
+
+a:not(.btn-suplementacion):hover {
+    opacity: 0.8;
+}
+
+/* ===================== FORMULARIO MÁS LIMPIO ===================== */
+.formulario input,
+.formulario select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.formulario label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+/* ===================== TABLAS ADMIN MÁS LEGIBLES ===================== */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.03);
+}
+
+/* ===================== MENSAJES ===================== */
+.mensaje {
+    transition: all 0.4s ease;
+}
+.nav-links a {
+    font-weight: 500;
+}
+
+/* ===================== SUPLEMENTACIÓN DEPORTIVA ===================== */
+
+.text-suplementacion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.text-suplementacion .split-top-categories {
+    font-size: 12px;
+    font-weight: 350;
+    color: #ccff00;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.text-suplementacion h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: 0.5px;
+    color: var(--color-principal);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.text-suplementacion .title-line {
+    display: block;
+    border: none;
+    border-top: 1px solid #ccff00;
+    width: 55px;
+    margin: 30px 0;
+}
+
+.text-suplementacion p {
+    font-size: 19px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: var(--color-principal);
+    margin-bottom: 20px;
+}
+
+.suplementacion-buttons-container {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 580px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.suplementacion-buttons-container .btn-suplementacion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 240px;
+}
+
+/* ===================== BOTÓN WHATSAPP ===================== */
+.suplementacion-buttons-container .btn-wsp-neon {
+    background-color: var(--color-principal);
+    color: #000000;
+    border: 1px solid var(--color-principal);
+}
+
+.suplementacion-buttons-container .btn-wsp-neon:hover {
+    background-color: var(--color-principal-hover);
+    border-color: var(--color-principal-hover);
+    transform: translateY(-2px);
+}
+
+.suplementacion-buttons-container .btn-wsp-neon svg {
+    fill: #000000;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* ===================== BOTÓN FORMULARIO ===================== */
+.suplementacion-buttons-container .btn-contacto-negro {
+    background-color: #000000;
+    color: var(--color-principal);
+    border: 1px solid var(--color-principal);
+}
+
+.suplementacion-buttons-container .btn-contacto-negro:hover {
+    background-color: rgba(204, 253, 50, 0.08);
+    transform: translateY(-2px);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+    .text-suplementacion h2 {
+        font-size: 52px;
+    }
+    .suplementacion-buttons-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .suplementacion-buttons-container .btn-suplementacion {
+        width: 100%;
+    }
+}
+
+/* ===================== SECCIÓN TESTIMONIOS ===================== */
+#testimonios {
+    padding: 120px 0;
+    background-color: var(--color-seccion); 
+    text-align: center;
+}
+
+.testimonios-grid {
+    position: relative;
+    max-width: 640px;
+    margin: 50px auto 0 auto;
+    width: 100%;
+}
+
+.testimonio-card {
+    display: none;
+    background: black;
+    border: 1px solid var(--color-principal);
+    border-radius: 14px;
+    padding: 40px 30px 30px 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonio-card.active {
+    display: flex;
+    animation: aparecerTestimonio 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes aparecerTestimonio {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonio-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-principal-hover);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(230, 255, 112, 0.1);
+}
+
+.testimonio-card::before {
+    content: "“";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 100px;
+    color: var(--color-principal);
+    opacity: 0.08;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.testimonio-texto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-principal);
+    margin: 0 0 30px 0;
+    font-style: italic;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonio-autor {
+    border-top: 1px dashed rgba(204, 253, 50, 0.25);
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.testimonio-autor strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-principal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.testimonio-autor span {
+    font-size: 0.8rem;
+    color: var(--color-principal);
+    opacity: 0.65;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
