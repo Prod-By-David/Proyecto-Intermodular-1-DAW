@@ -10,7 +10,7 @@
 
 ## 📋 Descripción del Proyecto
 
-**FitLanding** es una landing page profesional y funcional diseñada para la promoción de un gimnasio. El proyecto incluye un formulario de inscripción completamente operativo con almacenamiento en base de datos, panel de administración para visualizar inscritos, y diseño responsive optimizado para conversiones.
+Este proyecto es una landing page profesional y funcional diseñada para la promoción de un gimnasio. El proyecto incluye un formulario de inscripción completamente operativo con almacenamiento en base de datos, panel de administración para visualizar inscritos, y diseño responsive optimizado para conversiones.
 
 Este proyecto demuestra la integración de tecnologías front-end y back-end, aplicando buenas prácticas de desarrollo web y gestión de bases de datos.
 
@@ -27,10 +27,10 @@ Este proyecto demuestra la integración de tecnologías front-end y back-end, ap
 
 | Capa | Tecnologías |
 |------|-------------|
-| **Front-end** | HTML5, CSS3, JavaScript (Vanilla) |
+| **Front-end** | HTML5, CSS3, JavaScript |
 | **Back-end** | PHP 8.x |
 | **Base de Datos** | MySQL (gestionado con phpMyAdmin) |
 | **Entorno de Desarrollo** | Visual Studio Code |
-| **Servidor Local** | XAMPP / WAMP / MAMP |
+| **Servidor Local** | XAMPP |
 
 ## 📁 Estructura del Proyecto
