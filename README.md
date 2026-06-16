@@ -1,4 +1,4 @@
-# 🏆 FitLanding - Landing Page para Gimnasio
+# 🏆 Club Deportivo Elemental - One Wound One Victory | Landing Page para Gimnasio
 
 [![UAX](https://img.shields.io/badge/UAX-Universidad%20Alfonso%20X%20el%20Sabio-blue)](https://www.uax.com)
 [![DAW](https://img.shields.io/badge/1º%20DAW-Desarrollo%20Aplicaciones%20Web-green)](https://www.uax.com)
